@@ -23,7 +23,7 @@ const BoxTodo = () => {
 
 
         try {
-            const res = await axios.post('http://localhost:5000/api/item', { item: itemText });
+            const res = await axios.post('https://servertodolist.onrender.com/api/item', { item: itemText });
 
             setlistItems(prev => [...prev, res.data])
             setItemtext('')
@@ -38,7 +38,7 @@ const BoxTodo = () => {
 
         const getItemList = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/items')
+                const res = await axios.get('https://servertodolist.onrender.com/api/items')
                 setlistItems(res.data);
                 console.log('render');
             }
@@ -53,7 +53,7 @@ const BoxTodo = () => {
 
     const deletItem = async (id) => {
         try {
-            const res = await axios.delete(`http://localhost:5000/api/item/${id}`)
+            const res = await axios.delete(`https://servertodolist.onrender.com/api/item${id}`)
             console.log(res.data);
             const newListItems = listItmes.filter(item => item._id !== id);
             setlistItems(newListItems)
@@ -68,7 +68,7 @@ const BoxTodo = () => {
     const updateItems = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.put(`http://localhost:5000/api/item/${isUpdating}`, { items: updateItemText });
+            const res = await axios.put(`https://servertodolist.onrender.com/api/item${isUpdating}`, { items: updateItemText });
             console.log(res.data);
 
             const updateItemIndex = listItmes.findIndex(item => item._id === isUpdating);
