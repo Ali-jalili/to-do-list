@@ -119,13 +119,13 @@ text-align: left;
 
 @media screen and (max-width: 614px) {
   .my-box {
-   width: 400px;  
+   width: 300px;  
   
   }
   .form{
-        width: 358px;
+        width: 300px;
   }
   .item-content{
-    width: 60%;
+    width: 50%;
   }
 }
